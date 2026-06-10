@@ -45,6 +45,7 @@ import gymRoutes from './routes/gym.routes';
 import beltRoutes from './routes/belt.routes';
 import tournamentRoutes from './routes/tournament.routes';
 import sparringRoutes from './routes/sparring.routes';
+import coachRoutes from './routes/coach.routes';
 
 app.use('/api/v1/auth', authRoutes);
 app.use('/api/v1/users', userRoutes);
@@ -54,6 +55,7 @@ app.use('/api/v1/gyms', gymRoutes);
 app.use('/api/v1/belts', beltRoutes);
 app.use('/api/v1/tournaments', tournamentRoutes);
 app.use('/api/v1/sparring', sparringRoutes);
+app.use('/api/v1/coaches', coachRoutes);
 
 // Global Error Handler
 app.use((err: any, req: Request, res: Response, next: NextFunction) => {

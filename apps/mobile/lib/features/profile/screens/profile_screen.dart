@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:go_router/go_router.dart';
 import 'package:lucide_flutter/lucide_flutter.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:video_player/video_player.dart';
@@ -259,6 +260,20 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
                             ),
                           ),
                         ],
+                      ),
+                      const SizedBox(height: AppSpacing.s8),
+                      ElevatedButton.icon(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: AppColors.accentGold,
+                          foregroundColor: Colors.black,
+                          minimumSize: const Size(double.infinity, 40),
+                        ),
+                        icon: const Icon(LucideIcons.layoutDashboard, size: 16),
+                        label: const Text(
+                          'SENSEI DASHBOARD',
+                          style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold),
+                        ),
+                        onPressed: () => context.push('/coach-dashboard'),
                       ),
                     ],
                   ),

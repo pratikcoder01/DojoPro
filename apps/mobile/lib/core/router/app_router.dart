@@ -9,6 +9,7 @@ import '../../features/profile/screens/profile_screen.dart';
 import '../../shared/widgets/navigation_scaffold.dart';
 
 import '../../features/profile/screens/belt_verification_screen.dart';
+import '../../features/coaching/screens/coach_dashboard_screen.dart';
 
 final GlobalKey<NavigatorState> rootNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'root');
 final GlobalKey<NavigatorState> shellNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'shell');
@@ -29,6 +30,13 @@ final GoRouter appRouter = GoRouter(
       path: '/verify-belt',
       builder: (BuildContext context, GoRouterState state) {
         return const BeltVerificationScreen();
+      },
+    ),
+    // Coach Dashboard Route (standalone)
+    GoRoute(
+      path: '/coach-dashboard',
+      builder: (BuildContext context, GoRouterState state) {
+        return const CoachDashboardScreen();
       },
     ),
     // Shell navigation route for the 5-tab app
