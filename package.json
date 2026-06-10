@@ -1,0 +1,24 @@
+{
+  "name": "dojopro-monorepo",
+  "version": "1.0.0",
+  "description": "Unified professional platform for martial artists",
+  "private": true,
+  "workspaces": [
+    "apps/web",
+    "services/api"
+  ],
+  "scripts": {
+    "dev:api": "npm run dev --workspace=services/api",
+    "build:api": "npm run build --workspace=services/api",
+    "start:api": "npm run start --workspace=services/api"
+  },
+  "keywords": [
+    "martial-arts",
+    "dojo",
+    "booking",
+    "social",
+    "webrtc"
+  ],
+  "author": "",
+  "license": "UNLICENSED"
+}

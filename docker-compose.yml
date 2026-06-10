@@ -1,0 +1,51 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: pgvector/pgvector:15-pgdg
+    container_name: dojopro-postgres
+    environment:
+      POSTGRES_USER: dojopro_admin
+      POSTGRES_PASSWORD: dojopro_password
+      POSTGRES_DB: dojopro_local
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - dojopro-network
+    restart: unless-stopped
+
+  redis:
+    image: redis:7-alpine
+    container_name: dojopro-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redisdata:/data
+    networks:
+      - dojopro-network
+    restart: unless-stopped
+
+  typesense:
+    image: typesense/typesense:26.0
+    container_name: dojopro-typesense
+    environment:
+      - TYPESENSE_API_KEY=dojopro_search_secret_key
+      - TYPESENSE_DATA_DIR=/data
+    ports:
+      - "8108:8108"
+    volumes:
+      - typesensedata:/data
+    networks:
+      - dojopro-network
+    restart: unless-stopped
+
+volumes:
+  pgdata:
+  redisdata:
+  typesensedata:
+
+networks:
+  dojopro-network:
+    driver: bridge

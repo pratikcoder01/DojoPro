@@ -1,0 +1,65 @@
+# Dependency directories
+node_modules/
+jspm_packages/
+web_member/
+
+# Build outputs
+dist/
+build/
+out/
+.next/
+bin/
+obj/
+
+# Flutter/Dart specific ignores
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+/build/
+ephemeral/
+*.fileexports
+/apps/mobile/ios/.symlinks/
+/apps/mobile/ios/Pods/
+/apps/mobile/android/.gradle/
+/apps/mobile/android/local.properties
+/apps/mobile/android/key.properties
+/apps/mobile/android/app/src/main/res/values/google-services.json
+/apps/mobile/ios/Runner/GoogleService-Info.plist
+*.lock
+*.log
+doc/api/
+.metadata
+
+# Python / FastAPI specific ignores
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+env/
+.env
+.env.local
+.env.*.local
+.env.production
+.env.staging
+.env.development
+
+# IDE/Editor specific ignores
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.DS_Store
+
+# Local database/docker volumes
+.docker-data/
+pgdata/
+redisdata/
+typesensedata/
